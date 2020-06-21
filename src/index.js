@@ -1,6 +1,8 @@
-import React from 'react'
-import styles from './styles.module.css'
+import { Title } from './components/Title'
+import { Text } from './components/Text'
+import { Container } from './components/Container'
+import { Button } from './components/Button'
+import { Row } from './components/Row'
+import { Col } from './components/Col'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export { Title, Text, Container, Button, Row, Col }
