@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   padding: 2em;
-  background: #ccc;
+  /* background: #ccc; */
 `
 
 export const Container = ({ children, styleProps }) => (

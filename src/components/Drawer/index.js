@@ -8,11 +8,13 @@ const StyledDrawerBody = styled.div`
   top: 0;
   right: 0;
   transition: all 0.5s;
+  overflow-x: hidden;
+  border-left: 2px solid black;
 
   ${(props) =>
     props.isOpen
       ? 'margin-right: 0px;position: absolute;'
-      : 'margin-right: -600px; position: fixed;'};
+      : 'margin-right: -602px; position: fixed;'};
 `
 
 const StyledDrawerHeader = styled.div`
@@ -21,6 +23,7 @@ const StyledDrawerHeader = styled.div`
   width: 100%;
   background: #aaa;
   font-size: 2em;
+  border-bottom: 1px solid black;
 `
 
 export const Drawer = ({

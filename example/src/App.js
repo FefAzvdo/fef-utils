@@ -3,6 +3,13 @@ import React, { useState } from 'react'
 import { Title, Text, Container, Button, Row, Col, Drawer } from 'fef-utils'
 import 'fef-utils/dist/index.css'
 
+const showHours = () =>
+  alert(
+    `São ${(new Date().getHours() < 10 ? '0' : '') + new Date().getHours()}:${
+      (new Date().getMinutes() < 10 ? '0' : '') + new Date().getMinutes()
+    }`
+  )
+
 const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
@@ -42,14 +49,7 @@ const App = () => {
             icon='⌚'
             rounded
             colorSetup={{ firstColor: '#003', secondColor: 'white' }}
-            onClick={() =>
-              alert(
-                `São ${new Date().getHours()}:${
-                  (new Date().getMinutes() < 10 ? '0' : '') +
-                  new Date().getMinutes()
-                }`
-              )
-            }
+            onClick={showHours}
           >
             Ver hora
           </Button>
@@ -68,9 +68,8 @@ const App = () => {
           <Button
             styleProps={{ borderRadius: '25px' }}
             colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
-            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
           >
-            ABRIR DRAWER
+            Green Btn
           </Button>
         </Col>
       </Row>
