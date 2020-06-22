@@ -1,46 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Title, Text, Container, Button, Row, Col } from 'fef-utils'
+import { Title, Text, Container, Button, Row, Col, Drawer } from 'fef-utils'
 import 'fef-utils/dist/index.css'
 
 const App = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
     <Container>
       <Row>
-        <Col justify='flex-end'>
+        <Col justify='space-between'>
+          <Button
+            styleProps={{ borderRadius: '25px' }}
+            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+          >
+            {isDrawerOpen ? 'FECHAR DRAWER' : 'ABRIR DRAWER'}
+          </Button>
           <Title colorSetup='info'>Computadores Quanticos</Title>
         </Col>
       </Row>
       <Row>
-        <Text colorSetup='info' shouldCapitalizeFirstLetter>
-          Um computador quântico é um dispositivo que executa cálculos fazendo
-          uso direto de propriedades da mecânica quântica, tais como
-          sobreposição e interferência. Teoricamente, computadores quânticos
-          podem ser implementados e o mais desenvolvido atualmente, o D-Wave
-          Two, trabalha com 512 qubits de informação. O principal ganho desses
-          computadores é a possibilidade de resolver algoritmos num tempo
-          eficiente, alguns problemas que na computação clássica levariam tempo
-          impraticável (exponencial no tamanho da entrada), como por exemplo, a
-          fatoração em primos de números naturais.
-        </Text>
-        <Text>
-          A redução do tempo de resolução deste problema possibilitaria a quebra
-          da maioria dos sistemas de criptografia usados atualmente. Contudo, o
-          computador quântico ofereceria um novo esquema de canal mais seguro.
-          Computadores quânticos são diferentes de computadores clássicos tais
-          como computadores de DNA e computadores baseados em transístores,
-          ainda que estes utilizem alguns efeitos da mecânica quântica.
-        </Text>
-      </Row>
-      <Row>
         <Col size='30%'>
-          <Button colorSetup='success' onClick={() => alert('Enviou')} icon='✉'>
+          <Button
+            colorSetup={{ firstColor: '#1d6a96', secondColor: 'white' }}
+            onClick={() => alert('Enviou')}
+            icon='✉'
+          >
             Enviar msg
           </Button>
         </Col>
         <Col size='70%' justify='flex-end'>
           <Button
-            colorSetup='info'
+            colorSetup={{ firstColor: '#003e19', secondColor: 'white' }}
             onClick={() => alert('Salvou')}
             icon='☁'
             invertedIcon
@@ -50,7 +41,7 @@ const App = () => {
           <Button
             icon='⌚'
             rounded
-            colorSetup='warning'
+            colorSetup={{ firstColor: '#003', secondColor: 'white' }}
             onClick={() =>
               alert(
                 `São ${new Date().getHours()}:${
@@ -63,7 +54,7 @@ const App = () => {
             Ver hora
           </Button>
           <Button
-            colorSetup='danger'
+            colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
             onClick={() => alert('Atendeu')}
             icon='☎'
             rounded
@@ -74,21 +65,67 @@ const App = () => {
       </Row>
       <Row>
         <Col justify='flex-end'>
-          <Button styleProps={{ borderRadius: '25px' }}>Normal Button</Button>
+          <Button
+            styleProps={{ borderRadius: '25px' }}
+            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+          >
+            ABRIR DRAWER
+          </Button>
         </Col>
       </Row>
-      <Button block>Normal Button with BLOCK prop</Button>
+      <Button
+        block
+        colorSetup={{ firstColor: '#32435f', secondColor: '#a67f78' }}
+      >
+        Normal Button with BLOCK prop
+      </Button>
 
       <Row>
         <Col size='30%'>
-          <Button block>Normal Button with BLOCK prop</Button>
+          <Button
+            block
+            colorSetup={{ firstColor: '#69491a', secondColor: '#f2ab39' }}
+          >
+            Normal Button with BLOCK prop
+          </Button>
         </Col>
         <Col size='70%' justify='space-between'>
-          <Button>BTN 1</Button>
-          <Button>BTN 2</Button>
-          <Button>BTN 3</Button>
+          <Button colorSetup={{ firstColor: '#a13e97', secondColor: '#000' }}>
+            BTN 1
+          </Button>
+          <Button
+            colorSetup={{ firstColor: '#280e3b', secondColor: '#f2ab39' }}
+          >
+            BTN 2
+          </Button>
+          <Button>Default Button</Button>
         </Col>
       </Row>
+      <Drawer isOpen={isDrawerOpen} title='Descrição'>
+        <Row>
+          <Text colorSetup='info' shouldCapitalizeFirstLetter>
+            Um computador quântico é um dispositivo que executa cálculos fazendo
+            uso direto de propriedades da mecânica quântica, tais como
+            sobreposição e interferência. Teoricamente, computadores quânticos
+            podem ser implementados e o mais desenvolvido atualmente, o D-Wave
+            Two, trabalha com 512 qubits de informação. O principal ganho desses
+            computadores é a possibilidade de resolver algoritmos num tempo
+            eficiente, alguns problemas que na computação clássica levariam
+            tempo impraticável (exponencial no tamanho da entrada), como por
+            exemplo, a fatoração em primos de números naturais.
+          </Text>
+          <Text>
+            A redução do tempo de resolução deste problema possibilitaria a
+            quebra da maioria dos sistemas de criptografia usados atualmente.
+            Contudo, o computador quântico ofereceria um novo esquema de canal
+            mais seguro. Computadores quânticos são diferentes de computadores
+            clássicos tais como computadores de DNA e computadores baseados em
+            transístores, ainda que estes utilizem alguns efeitos da mecânica
+            quântica.
+          </Text>
+        </Row>
+      </Drawer>
     </Container>
   )
 }

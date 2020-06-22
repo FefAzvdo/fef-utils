@@ -16,19 +16,10 @@ export const StyledButton = styled.button`
   outline: 0px;
 
   ${(props) => {
-    switch (props.colorSetup) {
-      case 'success':
-        return 'background: white;color: #5cb85c;border: 2px solid #5cb85c;'
-      case 'info':
-        return 'background: white;color: #5bc0de;border: 2px solid #5bc0de;'
-      case 'warning':
-        return 'background: white;color: #f0ad4e;border: 2px solid #f0ad4e;'
-      case 'danger':
-        return 'background: white;color: #d9534f;border: 2px solid #d9534f;'
-    }
-
-    return 'background: white;color: black;border: 2px solid black;'
-  }}
+    if (props.colorSetup) {
+      return `background: ${props.colorSetup.secondColor};color: ${props.colorSetup.firstColor};border: 2px solid ${props.colorSetup.firstColor};`
+    } else return 'background: white;color: black;border: 2px solid black;'
+  }};
 
   ${(props) => {
     if (props.rounded) {
@@ -44,21 +35,14 @@ export const StyledButton = styled.button`
 
   &:hover {
     ${(props) => {
-      switch (props.colorSetup) {
-        case 'success':
-          return 'background: #5cb85c;color: white;border: 2px solid white;'
-        case 'info':
-          return 'background: #5bc0de;color: white;border: 2px solid white;'
-        case 'warning':
-          return 'background: #f0ad4e;color: white;border: 2px solid white;'
-        case 'danger':
-          return 'background: #d9534f;color: white;border: 2px solid white;'
-      }
-
-      return 'background: black;color: white;border: 2px solid white;'
+      if (props.colorSetup) {
+        return `background: ${props.colorSetup.firstColor};color: ${props.colorSetup.secondColor};border: 2px solid ${props.colorSetup.secondColor};`
+      } else return 'background: black;color: white;border: 2px solid white;'
     }}
+  }
 
-    cursor:pointer;
+  &:hover {
+    cursor: pointer;
   }
 `
 

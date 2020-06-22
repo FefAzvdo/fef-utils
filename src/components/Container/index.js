@@ -5,7 +5,6 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
   padding: 2em;
   background: #ccc;
 `
