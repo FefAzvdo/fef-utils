@@ -1,30 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-
-const StyledDrawerBody = styled.div`
-  width: 600px;
-  min-height: ${(props) => props.minHeight};
-  background-color: #f9f9f8;
-  top: 0;
-  right: 0;
-  transition: all 0.5s;
-  overflow-x: hidden;
-  border-left: 2px solid black;
-
-  ${(props) =>
-    props.isOpen
-      ? 'margin-right: 0px;position: absolute;'
-      : 'margin-right: -602px; position: fixed;'};
-`
-
-const StyledDrawerHeader = styled.div`
-  display: flex;
-  padding: 10px;
-  width: 100%;
-  background: #aaa;
-  font-size: 2em;
-  border-bottom: 1px solid black;
-`
+import React, { useEffect, useState, Fragment } from 'react'
+import { Row, Col, Button } from 'fef-utils'
+import {
+  StyledDrawerShadowMask,
+  StyledDrawerBody,
+  StyledDrawerHeader
+} from './styles'
 
 export const Drawer = ({
   children,
@@ -34,9 +14,16 @@ export const Drawer = ({
   onClose = () => {}
 }) => {
   useEffect(() => {
-    const height = window.document.body.offsetHeight + 'px'
+    const iH = window.innerHeight
+    const oH = window.document.body.offsetHeight
 
-    setHeight(height)
+    if (iH > oH) {
+      const h = iH + 'px'
+      setHeight(h)
+    } else {
+      const h = oH + 'px'
+      setHeight(h)
+    }
   })
 
   useEffect(() => {
@@ -48,9 +35,12 @@ export const Drawer = ({
   const [height, setHeight] = useState(0)
 
   return (
-    <StyledDrawerBody isOpen={isOpen} minHeight={height}>
-      <StyledDrawerHeader>{title}</StyledDrawerHeader>
-      <div style={{ padding: '10px' }}>{children}</div>
-    </StyledDrawerBody>
+    <Fragment>
+      <StyledDrawerShadowMask isOpen={isOpen} />
+      <StyledDrawerBody isOpen={isOpen} height={height}>
+        <StyledDrawerHeader>{title}</StyledDrawerHeader>
+        <div style={{ padding: '10px' }}>{children}</div>
+      </StyledDrawerBody>
+    </Fragment>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Title, Text, Container, Button, Row, Col, Drawer } from 'fef-utils'
+import { Title, Text, Wrapper, Button, Row, Col, Drawer } from 'fef-utils'
 import 'fef-utils/dist/index.css'
 
 const showHours = () =>
@@ -13,7 +13,7 @@ const showHours = () =>
 const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
-    <Container>
+    <Wrapper>
       <Row>
         <Col justify='space-between'>
           <Button
@@ -25,6 +25,48 @@ const App = () => {
           </Button>
           <Title colorSetup='info'>Computadores Quanticos</Title>
         </Col>
+      </Row>
+      <Row>
+        <Text colorSetup='info' shouldCapitalizeFirstLetter>
+          Um computador quântico é um dispositivo que executa cálculos fazendo
+          uso direto de propriedades da mecânica quântica, tais como
+          sobreposição e interferência. Teoricamente, computadores quânticos
+          podem ser implementados e o mais desenvolvido atualmente, o D-Wave
+          Two, trabalha com 512 qubits de informação. O principal ganho desses
+          computadores é a possibilidade de resolver algoritmos num tempo
+          eficiente, alguns problemas que na computação clássica levariam tempo
+          impraticável (exponencial no tamanho da entrada), como por exemplo, a
+          fatoração em primos de números naturais.
+        </Text>
+        <Text>
+          A redução do tempo de resolução deste problema possibilitaria a quebra
+          da maioria dos sistemas de criptografia usados atualmente. Contudo, o
+          computador quântico ofereceria um novo esquema de canal mais seguro.
+          Computadores quânticos são diferentes de computadores clássicos tais
+          como computadores de DNA e computadores baseados em transístores,
+          ainda que estes utilizem alguns efeitos da mecânica quântica.
+        </Text>
+      </Row>
+      <Row>
+        <Text colorSetup='info' shouldCapitalizeFirstLetter>
+          Um computador quântico é um dispositivo que executa cálculos fazendo
+          uso direto de propriedades da mecânica quântica, tais como
+          sobreposição e interferência. Teoricamente, computadores quânticos
+          podem ser implementados e o mais desenvolvido atualmente, o D-Wave
+          Two, trabalha com 512 qubits de informação. O principal ganho desses
+          computadores é a possibilidade de resolver algoritmos num tempo
+          eficiente, alguns problemas que na computação clássica levariam tempo
+          impraticável (exponencial no tamanho da entrada), como por exemplo, a
+          fatoração em primos de números naturais.
+        </Text>
+        <Text>
+          A redução do tempo de resolução deste problema possibilitaria a quebra
+          da maioria dos sistemas de criptografia usados atualmente. Contudo, o
+          computador quântico ofereceria um novo esquema de canal mais seguro.
+          Computadores quânticos são diferentes de computadores clássicos tais
+          como computadores de DNA e computadores baseados em transístores,
+          ainda que estes utilizem alguns efeitos da mecânica quântica.
+        </Text>
       </Row>
       <Row>
         <Col size='30%'>
@@ -79,7 +121,27 @@ const App = () => {
       >
         Normal Button with BLOCK prop
       </Button>
-
+      <Row>
+        <Text colorSetup='info' shouldCapitalizeFirstLetter>
+          Um computador quântico é um dispositivo que executa cálculos fazendo
+          uso direto de propriedades da mecânica quântica, tais como
+          sobreposição e interferência. Teoricamente, computadores quânticos
+          podem ser implementados e o mais desenvolvido atualmente, o D-Wave
+          Two, trabalha com 512 qubits de informação. O principal ganho desses
+          computadores é a possibilidade de resolver algoritmos num tempo
+          eficiente, alguns problemas que na computação clássica levariam tempo
+          impraticável (exponencial no tamanho da entrada), como por exemplo, a
+          fatoração em primos de números naturais.
+        </Text>
+        <Text>
+          A redução do tempo de resolução deste problema possibilitaria a quebra
+          da maioria dos sistemas de criptografia usados atualmente. Contudo, o
+          computador quântico ofereceria um novo esquema de canal mais seguro.
+          Computadores quânticos são diferentes de computadores clássicos tais
+          como computadores de DNA e computadores baseados em transístores,
+          ainda que estes utilizem alguns efeitos da mecânica quântica.
+        </Text>
+      </Row>
       <Row>
         <Col size='30%'>
           <Button
@@ -101,7 +163,18 @@ const App = () => {
           <Button>Default Button</Button>
         </Col>
       </Row>
-      <Drawer isOpen={isDrawerOpen} title='Descrição'>
+      <Drawer isOpen={isDrawerOpen}>
+        <Row>
+          <Col justify='flex-end'>
+            <Button
+              styleProps={{ borderRadius: '25px' }}
+              colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+            >
+              {isDrawerOpen ? 'FECHAR DRAWER' : 'ABRIR DRAWER'}
+            </Button>
+          </Col>
+        </Row>
         <Row>
           <Text colorSetup='info' shouldCapitalizeFirstLetter>
             Um computador quântico é um dispositivo que executa cálculos fazendo
@@ -125,7 +198,7 @@ const App = () => {
           </Text>
         </Row>
       </Drawer>
-    </Container>
+    </Wrapper>
   )
 }
 
