@@ -41,7 +41,7 @@ export const StyledButton = styled.button`
 
   ${(props) => {
     if (props.disabled) {
-      return 'background: rgba(0, 0, 0, 0.3);color: rgba(0, 0, 0, 0.4);border: 2px dashed #f9f9f9;cursor:not-allowed;'
+      return 'background: rgba(0, 0, 0, 0.3);color: #ccc;border: 2px dashed #f9f9f9;cursor:not-allowed;'
     }
   }}
 

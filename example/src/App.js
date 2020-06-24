@@ -33,7 +33,6 @@ const App = () => {
       <Row justify='flex-start'>
         <Col justify='space-between' size='30%'>
           <Button
-            styleProps={{ borderRadius: '25px' }}
             colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
             onClick={() => setIsDrawerOpen(!isDrawerOpen)}
             rounded
@@ -41,7 +40,6 @@ const App = () => {
             {isDrawerOpen ? 'FECHAR DRAWER' : 'ABRIR DRAWER'}
           </Button>
           <Button
-            styleProps={{ borderRadius: '25px' }}
             colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
             onClick={() => setIsModalOpen(!isDrawerOpen)}
             rounded
@@ -51,82 +49,11 @@ const App = () => {
         </Col>
       </Row>
       <Row>
-        <Col size='30%'>
-          <Button
-            colorSetup={{ firstColor: '#1d6a96', secondColor: 'white' }}
-            onClick={() => alert('Enviou')}
-            icon='✉'
-            rounded
-          >
-            Enviar msg
-          </Button>
+        <Col size='30%' style={{ backgroundColor: 'black', color: 'white' }}>
+          GRID 1
         </Col>
-        <Col size='70%' justify='flex-end'>
-          <Button
-            colorSetup={{ firstColor: '#003e19', secondColor: 'white' }}
-            onClick={() => alert('Salvou')}
-            icon='☁'
-            invertedIcon
-            rounded
-            disabled
-          >
-            Salvar na nuvem (disabled)
-          </Button>
-          <Button
-            icon='⌚'
-            rounded
-            colorSetup={{ firstColor: '#003', secondColor: 'white' }}
-            onClick={showHours}
-          >
-            Ver hora
-          </Button>
-          <Button
-            colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
-            onClick={() => alert('Atendeu')}
-            icon='☎'
-            rounded
-          >
-            Atender ligação
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <Col justify='flex-end'>
-          <Button
-            styleProps={{ borderRadius: '25px' }}
-            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
-            rounded
-          >
-            Green Btn
-          </Button>
-        </Col>
-      </Row>
-      <Button
-        block
-        colorSetup={{ firstColor: '#32435f', secondColor: '#a67f78' }}
-        rounded
-      >
-        Normal Button with BLOCK prop
-      </Button>
-      <Row>
-        <Col size='30%'>
-          <Button
-            block
-            colorSetup={{ firstColor: '#69491a', secondColor: '#f2ab39' }}
-          >
-            Normal Button with BLOCK prop
-          </Button>
-        </Col>
-        <Col size='70%' justify='space-between'>
-          <Button colorSetup={{ firstColor: '#a13e97', secondColor: '#000' }}>
-            BTN 1
-          </Button>
-          <Button
-            colorSetup={{ firstColor: '#280e3b', secondColor: '#f2ab39' }}
-          >
-            BTN 2
-          </Button>
-          <Button>Default Button</Button>
+        <Col size='70%' style={{ backgroundColor: 'red', color: 'blue' }}>
+          GRID 2
         </Col>
       </Row>
       <Drawer

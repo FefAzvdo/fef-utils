@@ -14,8 +14,8 @@ export const StyledModalPositioner = styled.div`
 `
 
 export const StyledModalInnerContent = styled.div`
-  width: 500px;
-  height: 300px;
+  width: 800px;
+  height: 600px;
   background: #fff;
   border: 2px solid #000;
   transition: all 0.5s;
@@ -49,23 +49,22 @@ export const StyledModalHeader = styled.div`
   font-size: 2em;
   text-shadow: 1px 2px 2px #ccc;
   font-weight: bold;
+  padding: 10px 0px;
 `
 
 export const StyledModalBody = styled.div`
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  height: 100%;
 `
 
 export const StyledModalFooter = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 100%;
   background: #eee;
-  position: relative;
-  left: 0;
-  bottom: 0;
+  padding: 10px 0px;
 `
 
 /**

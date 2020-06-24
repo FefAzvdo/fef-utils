@@ -25,17 +25,17 @@ const ChildrenButton = ({ icon, invertedIcon, children }) => {
 
 export const Button = ({
   children,
-  styleProps,
   colorSetup,
   onClick,
   disabled,
   icon,
   invertedIcon,
   rounded,
-  block
+  block,
+  style
 }) => (
   <StyledButton
-    style={{ styleProps }}
+    style={style}
     colorSetup={colorSetup}
     onClick={() => {
       if (!disabled && onClick) {
