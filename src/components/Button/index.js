@@ -28,6 +28,7 @@ export const Button = ({
   styleProps,
   colorSetup,
   onClick,
+  disabled,
   icon,
   invertedIcon,
   rounded,
@@ -36,9 +37,14 @@ export const Button = ({
   <StyledButton
     style={{ styleProps }}
     colorSetup={colorSetup}
-    onClick={onClick}
+    onClick={() => {
+      if (!disabled) {
+        return onClick()
+      }
+    }}
     rounded={rounded}
     block={block}
+    disabled={disabled}
   >
     <ChildrenButton
       icon={icon}

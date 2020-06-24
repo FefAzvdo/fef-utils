@@ -13,7 +13,7 @@ export const StyledButton = styled.button`
   outline: 0px;
 
   ${(props) => {
-    if (props.colorSetup) {
+    if (props.colorSetup && !props.disabled) {
       return `background: ${props.colorSetup.secondColor};color: ${props.colorSetup.firstColor};border: 2px solid ${props.colorSetup.firstColor};`
     } else return 'background: white;color: black;border: 2px solid black;'
   }};
@@ -30,15 +30,26 @@ export const StyledButton = styled.button`
     }
   }}
 
-  &:hover {
+ &:hover {
     ${(props) => {
-      if (props.colorSetup) {
-        return `background: ${props.colorSetup.firstColor};color: ${props.colorSetup.secondColor};border: 2px solid ${props.colorSetup.secondColor};`
-      } else return 'background: black;color: white;border: 2px solid white;'
+      if (props.colorSetup && !props.disabled) {
+        return `background: ${props.colorSetup.firstColor};color: ${props.colorSetup.secondColor};border: 2px solid ${props.colorSetup.secondColor}; cursor: pointer`
+      } else if (!props.disabled)
+        return `background: black;color: white;border: 2px solid white; cursor: pointer`
     }}
   }
 
+  ${(props) => {
+    if (props.disabled) {
+      return 'background: rgba(0, 0, 0, 0.3);color: rgba(0, 0, 0, 0.4);border: 2px dashed #f9f9f9;cursor:not-allowed;'
+    }
+  }}
+
   &:hover {
-    cursor: pointer;
+    ${(props) => {
+      if (props.disabled) {
+        return `cursor: disabled`
+      }
+    }}
   }
 `

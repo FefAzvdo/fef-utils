@@ -104,6 +104,7 @@ const App = () => {
         block
         colorSetup={{ firstColor: '#32435f', secondColor: '#a67f78' }}
         rounded
+        disabled
       >
         Normal Button with BLOCK prop
       </Button>
