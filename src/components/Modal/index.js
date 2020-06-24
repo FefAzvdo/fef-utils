@@ -4,8 +4,7 @@ import {
   StyledModalShadowMask,
   StyledModalHeader,
   StyledModalBody,
-  StyledModalFooter,
-  StyledModalPositioner
+  StyledModalFooter
 } from './styles'
 
 import { Button } from 'fef-utils'
@@ -42,32 +41,30 @@ export const Modal = ({
         isOpen={(isOpen = isModalOpen)}
         onClick={() => onClose() || setIsModalOpen(false)}
       />
-      <StyledModalPositioner isOpen={(isOpen = isModalOpen)}>
-        <StyledModalInnerContent isOpen={(isOpen = isModalOpen)}>
-          <StyledModalHeader>
-            <div style={{ marginLeft: '10px' }}>{title}</div>
-          </StyledModalHeader>
-          <StyledModalBody>{children}</StyledModalBody>
-          <StyledModalFooter>
-            <Button
-              onClick={() => onOk()}
-              rounded
-              icon='✅'
-              colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
-            >
-              {onOkBtnText}
-            </Button>
-            <Button
-              onClick={() => onClose() || setIsModalOpen(false)}
-              rounded
-              icon='❌'
-              colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
-            >
-              {closeBtnText}
-            </Button>
-          </StyledModalFooter>
-        </StyledModalInnerContent>
-      </StyledModalPositioner>
+      <StyledModalInnerContent isOpen={(isOpen = isModalOpen)}>
+        <StyledModalHeader>
+          <div style={{ marginLeft: '10px' }}>{title}</div>
+        </StyledModalHeader>
+        <StyledModalBody>{children}</StyledModalBody>
+        <StyledModalFooter>
+          <Button
+            onClick={() => onOk()}
+            rounded
+            icon='✅'
+            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+          >
+            {onOkBtnText}
+          </Button>
+          <Button
+            onClick={() => onClose() || setIsModalOpen(false)}
+            rounded
+            icon='❌'
+            colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
+          >
+            {closeBtnText}
+          </Button>
+        </StyledModalFooter>
+      </StyledModalInnerContent>
     </Fragment>
   )
 }

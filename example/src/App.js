@@ -98,15 +98,6 @@ const App = () => {
             tempo impraticável (exponencial no tamanho da entrada), como por
             exemplo, a fatoração em primos de números naturais.
           </Text>
-          <Text>
-            A redução do tempo de resolução deste problema possibilitaria a
-            quebra da maioria dos sistemas de criptografia usados atualmente.
-            Contudo, o computador quântico ofereceria um novo esquema de canal
-            mais seguro. Computadores quânticos são diferentes de computadores
-            clássicos tais como computadores de DNA e computadores baseados em
-            transístores, ainda que estes utilizem alguns efeitos da mecânica
-            quântica.
-          </Text>
         </Row>
       </Modal>
     </Wrapper>
