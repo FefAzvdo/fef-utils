@@ -11,7 +11,7 @@ export const StyledDrawerBody = styled.div`
   top: 0;
   right: 0;
   transition: all 0.5s;
-  overflow-x: hidden;
+  overflow: auto;
   border-left: 2px solid black;
   z-index: 3;
 
@@ -24,11 +24,13 @@ export const StyledDrawerBody = styled.div`
 export const StyledDrawerHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   width: 100%;
-  background: #aaa;
+  background: #eee;
   font-size: 2em;
-  border-bottom: 1px solid black;
+  text-shadow: 1px 2px 2px #ccc;
+  font-weight: bold;
 `
 
 export const StyledDrawerShadowMask = styled.div`

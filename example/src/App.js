@@ -1,6 +1,15 @@
 import React, { useState } from 'react'
 
-import { Title, Text, Wrapper, Button, Row, Col, Drawer } from 'fef-utils'
+import {
+  Title,
+  Text,
+  Wrapper,
+  Button,
+  Row,
+  Col,
+  Drawer,
+  Modal
+} from 'fef-utils'
 import 'fef-utils/dist/index.css'
 
 const showHours = () =>
@@ -12,18 +21,31 @@ const showHours = () =>
 
 const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <Wrapper>
       <Row>
-        <Col justify='space-between'>
+        <Col>
+          <Title colorSetup='info'>Computadores Quanticos</Title>
+        </Col>
+        <Col justify='flex-start'>
           <Button
             styleProps={{ borderRadius: '25px' }}
             colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
             onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+            rounded
           >
             {isDrawerOpen ? 'FECHAR DRAWER' : 'ABRIR DRAWER'}
           </Button>
-          <Title colorSetup='info'>Computadores Quanticos</Title>
+          <Button
+            styleProps={{ borderRadius: '25px' }}
+            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+            onClick={() => setIsModalOpen(!isDrawerOpen)}
+            rounded
+          >
+            {isModalOpen ? 'FECHAR MODAL' : 'ABRIR MODAL'}
+          </Button>
         </Col>
       </Row>
       <Row>
@@ -32,6 +54,7 @@ const App = () => {
             colorSetup={{ firstColor: '#1d6a96', secondColor: 'white' }}
             onClick={() => alert('Enviou')}
             icon='✉'
+            rounded
           >
             Enviar msg
           </Button>
@@ -42,6 +65,7 @@ const App = () => {
             onClick={() => alert('Salvou')}
             icon='☁'
             invertedIcon
+            rounded
           >
             Salvar na nuvem
           </Button>
@@ -68,6 +92,7 @@ const App = () => {
           <Button
             styleProps={{ borderRadius: '25px' }}
             colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+            rounded
           >
             Green Btn
           </Button>
@@ -76,6 +101,7 @@ const App = () => {
       <Button
         block
         colorSetup={{ firstColor: '#32435f', secondColor: '#a67f78' }}
+        rounded
       >
         Normal Button with BLOCK prop
       </Button>
@@ -102,8 +128,9 @@ const App = () => {
       </Row>
       <Drawer
         isOpen={isDrawerOpen}
-        onClose={() => alert('fechou')}
-        onOpen={() => alert('abriu')}
+        onClose={() => setIsDrawerOpen(false)}
+        title='Descrição'
+        closeBtnText='Fechar'
       >
         <Row>
           <Text colorSetup='info' shouldCapitalizeFirstLetter>
@@ -128,6 +155,9 @@ const App = () => {
           </Text>
         </Row>
       </Drawer>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        Modal Content
+      </Modal>
     </Wrapper>
   )
 }
