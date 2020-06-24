@@ -14,8 +14,8 @@ export const StyledModalPositioner = styled.div`
 `
 
 export const StyledModalInnerContent = styled.div`
+  display: flex;
   width: 800px;
-  height: 600px;
   background: #fff;
   border: 2px solid #000;
   transition: all 0.5s;
