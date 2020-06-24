@@ -1,17 +1,28 @@
 import styled from 'styled-components'
 
+export const StyledModalPositioner = styled.div`
+  ${(props) => (props.isOpen ? 'display: flex;' : 'display: none;')};
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+`
+
 export const StyledModalInnerContent = styled.div`
   width: 500px;
   height: 300px;
   background: #fff;
   border: 2px solid #000;
   transition: all 0.5s;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 10;
 
   ${(props) => (props.isOpen ? 'opacity: 1; ' : 'opacity: 0; ')};
+  ${(props) => (props.isOpen ? 'display: flex;' : 'display: none;')};
 `
 
 export const StyledModalShadowMask = styled.div`
@@ -23,10 +34,7 @@ export const StyledModalShadowMask = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
   cursor: pointer;
-  justify-content: center;
-  align-items: center;
 
   ${(props) => (props.isOpen ? 'display: flex;' : 'display: none;')};
 `
