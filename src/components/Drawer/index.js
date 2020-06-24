@@ -53,7 +53,7 @@ export const Drawer = ({
       />
       <StyledDrawerBody isOpen={(isOpen = isDrawerOpen)} height={height}>
         <StyledDrawerHeader>
-          <div>{title}</div>
+          <div style={{ margin: '10px' }}>{title}</div>
           <div style={{ marginRight: '10px' }}>
             <Button
               onClick={() => onClose() || setIsDrawerOpen(false)}

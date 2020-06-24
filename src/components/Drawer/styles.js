@@ -19,13 +19,16 @@ export const StyledDrawerBody = styled.div`
     props.isOpen
       ? 'margin-right: 0px;position: absolute;'
       : 'margin-right: -602px; position: fixed;'};
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export const StyledDrawerHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   width: 100%;
   background: #eee;
   font-size: 2em;

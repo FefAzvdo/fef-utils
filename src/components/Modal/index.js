@@ -49,26 +49,22 @@ export const Modal = ({
           </StyledModalHeader>
           <StyledModalBody>{children}</StyledModalBody>
           <StyledModalFooter>
-            <div>
-              <Button
-                onClick={() => onOk()}
-                rounded
-                icon='✅'
-                colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
-              >
-                {onOkBtnText}
-              </Button>
-            </div>
-            <div>
-              <Button
-                onClick={() => onClose() || setIsModalOpen(false)}
-                rounded
-                icon='❌'
-                colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
-              >
-                {closeBtnText}
-              </Button>
-            </div>
+            <Button
+              onClick={() => onOk()}
+              rounded
+              icon='✅'
+              colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+            >
+              {onOkBtnText}
+            </Button>
+            <Button
+              onClick={() => onClose() || setIsModalOpen(false)}
+              rounded
+              icon='❌'
+              colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
+            >
+              {closeBtnText}
+            </Button>
           </StyledModalFooter>
         </StyledModalInnerContent>
       </StyledModalPositioner>

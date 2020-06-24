@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+import { device } from '../../utils/device'
 
 export const StyledCol = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   ${(props) => {
     if (props.bgColor) {
@@ -21,4 +23,9 @@ export const StyledCol = styled.div`
       return `width: ${props.size}`
     } else return `width: 100%`
   }};
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `

@@ -2,14 +2,15 @@ import styled from 'styled-components'
 
 export const StyledModalPositioner = styled.div`
   ${(props) => (props.isOpen ? 'display: flex;' : 'display: none;')};
-
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 100%;
+
+  position: absolute;
   top: 0;
   left: 0;
-  position: fixed;
 `
 
 export const StyledModalInnerContent = styled.div`
