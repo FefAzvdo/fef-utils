@@ -38,7 +38,7 @@ export const Button = ({
     style={{ styleProps }}
     colorSetup={colorSetup}
     onClick={() => {
-      if (!disabled) {
+      if (!disabled && onClick) {
         return onClick()
       }
     }}

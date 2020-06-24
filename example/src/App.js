@@ -68,8 +68,9 @@ const App = () => {
             icon='☁'
             invertedIcon
             rounded
+            disabled
           >
-            Salvar na nuvem
+            Salvar na nuvem (disabled)
           </Button>
           <Button
             icon='⌚'
@@ -104,7 +105,6 @@ const App = () => {
         block
         colorSetup={{ firstColor: '#32435f', secondColor: '#a67f78' }}
         rounded
-        disabled
       >
         Normal Button with BLOCK prop
       </Button>
