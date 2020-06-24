@@ -8,4 +8,10 @@ export const StyledRow = styled.div`
   align-items: center;
 
   width: 100%;
+
+  ${(props) => {
+    if (props.justify) {
+      return `justify-content: ${props.justify}`
+    } else return `justify-content: center`
+  }};
 `

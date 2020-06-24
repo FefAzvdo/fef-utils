@@ -29,7 +29,9 @@ const App = () => {
         <Col>
           <Title colorSetup='info'>Computadores Quanticos</Title>
         </Col>
-        <Col justify='flex-start'>
+      </Row>
+      <Row justify='flex-start'>
+        <Col justify='space-between' size='30%'>
           <Button
             styleProps={{ borderRadius: '25px' }}
             colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
