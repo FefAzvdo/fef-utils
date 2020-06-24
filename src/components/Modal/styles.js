@@ -23,6 +23,8 @@ export const StyledModalShadowMask = styled.div`
 
 export const StyledModalInnerContent = styled.div`
   display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
   width: 100%;
   max-width: 800px;
@@ -31,13 +33,10 @@ export const StyledModalInnerContent = styled.div`
   background: #fff;
   border: 2px solid #000;
   transition: all 0.5s;
-  flex-direction: column;
-  justify-content: space-between;
 
   z-index: 3;
 
   ${(props) => (props.isOpen ? 'opacity: 1; ' : 'opacity: 0; ')};
-  ${(props) => (props.isOpen ? 'display: flex;' : 'display: none;')};
 `
 
 export const StyledModalHeader = styled.div`

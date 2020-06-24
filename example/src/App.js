@@ -49,11 +49,22 @@ const App = () => {
         </Col>
       </Row>
       <Row>
-        <Col size='30%' style={{ backgroundColor: 'black', color: 'white' }}>
+        <Col size='30%' style={{ backgroundColor: '#aaa', color: 'black' }}>
           GRID 1
         </Col>
-        <Col size='70%' style={{ backgroundColor: 'red', color: 'blue' }}>
+        <Col size='70%' style={{ backgroundColor: '#bbb', color: 'black' }}>
           GRID 2
+        </Col>
+      </Row>
+      <Row>
+        <Col size='40%' style={{ backgroundColor: '#ccc', color: 'black' }}>
+          GRID 3
+        </Col>
+        <Col size='30%' style={{ backgroundColor: '#ddd', color: 'black' }}>
+          GRID 4
+        </Col>
+        <Col size='30%' style={{ backgroundColor: '#eee', color: 'black' }}>
+          GRID 5
         </Col>
       </Row>
       <Drawer
@@ -85,7 +96,11 @@ const App = () => {
           </Text>
         </Row>
       </Drawer>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title='Descrição'
+      >
         <Row>
           <Text colorSetup='info' shouldCapitalizeFirstLetter>
             Um computador quântico é um dispositivo que executa cálculos fazendo
