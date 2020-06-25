@@ -9,13 +9,16 @@ export const StyledButton = styled.button`
   font-size: 1rem;
   font-weight: bold;
 
-  transition: all 0.5s;
+  transition-property: color, background-color, border;
+  transition-duration: 0.5s;
+
   outline: 0px;
 
   ${(props) => {
     if (props.colorSetup && !props.disabled) {
-      return `background: ${props.colorSetup.secondColor};color: ${props.colorSetup.firstColor};border: 2px solid ${props.colorSetup.firstColor};`
-    } else return 'background: white;color: black;border: 2px solid black;'
+      return `background-color: ${props.colorSetup.secondColor};color: ${props.colorSetup.firstColor};border: 2px solid ${props.colorSetup.firstColor};`
+    } else
+      return 'background-color: white;color: black;border: 2px solid black;'
   }};
 
   ${(props) => {
@@ -33,15 +36,15 @@ export const StyledButton = styled.button`
  &:hover {
     ${(props) => {
       if (props.colorSetup && !props.disabled) {
-        return `background: ${props.colorSetup.firstColor};color: ${props.colorSetup.secondColor};border: 2px solid ${props.colorSetup.secondColor}; cursor: pointer`
+        return `background-color: ${props.colorSetup.firstColor};color: ${props.colorSetup.secondColor};border: 2px solid ${props.colorSetup.secondColor}; cursor: pointer`
       } else if (!props.disabled)
-        return `background: black;color: white;border: 2px solid white; cursor: pointer`
+        return `background-color: black;color: white;border: 2px solid white; cursor: pointer`
     }}
   }
 
   ${(props) => {
     if (props.disabled) {
-      return 'background: rgba(0, 0, 0, 0.3);color: #ccc;border: 2px dashed #f9f9f9;cursor:not-allowed;'
+      return 'background-color: rgba(0, 0, 0, 0.3);color: #ccc;border: 2px dashed #f9f9f9;cursor:not-allowed;'
     }
   }}
 

@@ -10,7 +10,7 @@ export const StyledDrawerBody = styled.div`
   background-color: #f9f9f8;
   top: 0;
   right: 0;
-  transition: all 0.5s;
+  transition: margin-right 0.5s;
   overflow: auto;
   border-left: 2px solid black;
   z-index: 3;

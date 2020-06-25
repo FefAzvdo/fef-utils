@@ -32,11 +32,13 @@ export const StyledModalInnerContent = styled.div`
 
   background: #fff;
   border: 2px solid #000;
-  transition: all 0.5s;
+  transition: opacity 0.5s ease-in-out;
 
   z-index: 3;
 
   ${(props) => (props.isOpen ? 'opacity: 1; ' : 'opacity: 0; ')};
+  ${(props) => (props.isOpen ? 'visibility: visible;' : 'visibility: hidden;')};
+  ${(props) => (props.isOpen ? 'height: auto;' : 'height: 0;')};
 `
 
 export const StyledModalHeader = styled.div`
