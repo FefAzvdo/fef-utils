@@ -1,19 +1,45 @@
 import styled from 'styled-components'
 
+export const StyledDrawerShadowMask = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  cursor: pointer;
+
+  transition: opacity 0.5s;
+
+  ${(props) => (props.isOpen ? 'opacity: 1; ' : 'opacity: 0; ')};
+  ${(props) => (props.isOpen ? 'visibility: visible;' : 'visibility: hidden;')};
+`
+
 export const StyledDrawerBody = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
   width: 600px;
   height: ${(props) => props.height};
   min-height: 790px;
+
   background-color: #f9f9f8;
+
+  position: absolute;
   top: 0;
   right: 0;
+
   transition: margin-right 0.5s;
+
   overflow: auto;
+
   border-left: 2px solid black;
-  z-index: 3;
+  z-index: 2;
 
   ${(props) =>
     props.isOpen
@@ -34,19 +60,4 @@ export const StyledDrawerHeader = styled.div`
   font-size: 2em;
   text-shadow: 1px 2px 2px #ccc;
   font-weight: bold;
-`
-
-export const StyledDrawerShadowMask = styled.div`
-  position: fixed;
-  width: 100%
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  cursor: pointer;
-
-  ${(props) => (props.isOpen ? 'display: block;' : 'display: none;')};
 `
