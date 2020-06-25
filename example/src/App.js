@@ -49,23 +49,82 @@ const App = () => {
         </Col>
       </Row>
       <Row>
-        <Col size='30%' style={{ backgroundColor: '#aaa', color: 'black' }}>
+        <Col
+          size='30%'
+          style={{
+            backgroundColor: '#aaa',
+            color: 'black',
+            minHeight: '100px'
+          }}
+        >
           GRID 1
         </Col>
-        <Col size='70%' style={{ backgroundColor: '#bbb', color: 'black' }}>
+        <Col
+          size='70%'
+          style={{
+            backgroundColor: '#bbb',
+            color: 'black',
+            minHeight: '100px'
+          }}
+        >
           GRID 2
         </Col>
       </Row>
       <Row>
-        <Col size='40%' style={{ backgroundColor: '#ccc', color: 'black' }}>
+        <Col
+          size='40%'
+          style={{
+            backgroundColor: '#ccc',
+            color: 'black',
+            minHeight: '100px'
+          }}
+          breakpoint='650'
+        >
           GRID 3
         </Col>
-        <Col size='30%' style={{ backgroundColor: '#ddd', color: 'black' }}>
+        <Col
+          size='30%'
+          style={{
+            backgroundColor: '#ddd',
+            color: 'black',
+            minHeight: '100px'
+          }}
+          breakpoint='650'
+        >
           GRID 4
         </Col>
-        <Col size='30%' style={{ backgroundColor: '#eee', color: 'black' }}>
+        <Col
+          size='30%'
+          style={{
+            backgroundColor: '#eee',
+            color: 'black',
+            minHeight: '100px'
+          }}
+          breakpoint='650'
+        >
           GRID 5
         </Col>
+      </Row>
+      <Row>
+        <Text colorSetup='info' shouldCapitalizeFirstLetter>
+          Um computador quântico é um dispositivo que executa cálculos fazendo
+          uso direto de propriedades da mecânica quântica, tais como
+          sobreposição e interferência. Teoricamente, computadores quânticos
+          podem ser implementados e o mais desenvolvido atualmente, o D-Wave
+          Two, trabalha com 512 qubits de informação. O principal ganho desses
+          computadores é a possibilidade de resolver algoritmos num tempo
+          eficiente, alguns problemas que na computação clássica levariam tempo
+          impraticável (exponencial no tamanho da entrada), como por exemplo, a
+          fatoração em primos de números naturais.
+        </Text>
+        <Text>
+          A redução do tempo de resolução deste problema possibilitaria a quebra
+          da maioria dos sistemas de criptografia usados atualmente. Contudo, o
+          computador quântico ofereceria um novo esquema de canal mais seguro.
+          Computadores quânticos são diferentes de computadores clássicos tais
+          como computadores de DNA e computadores baseados em transístores,
+          ainda que estes utilizem alguns efeitos da mecânica quântica.
+        </Text>
       </Row>
       <Drawer
         isOpen={isDrawerOpen}

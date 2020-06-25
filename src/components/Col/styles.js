@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { device } from '../../utils/device'
+// import { device } from '../../utils/device'
 
 export const StyledCol = styled.div`
   display: flex;
@@ -24,7 +24,8 @@ export const StyledCol = styled.div`
     } else return `width: 100%`
   }};
 
-  @media (max-width: 450px) {
+  @media (max-width: ${(props) =>
+      props.breakpoint ? props.breakpoint + 'px' : 450 + 'px'}) {
     flex-direction: column;
     width: 100%;
   }
