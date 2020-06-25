@@ -126,7 +126,8 @@ const App = () => {
           ainda que estes utilizem alguns efeitos da mecânica quântica.
         </Text>
       </Row>
-      <Drawer
+      AAAAAAAAAAAAAAAA MODAL EM BAIXO
+      {/* <Drawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
         title='Descrição'
@@ -154,7 +155,7 @@ const App = () => {
             quântica.
           </Text>
         </Row>
-      </Drawer>
+      </Drawer> */}
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -174,7 +175,7 @@ const App = () => {
           </Text>
         </Row>
       </Modal>
-      asaaaaaaaaaaaaaaaaaaaaa
+      AAAAAAAAAAAAA MODAL EM CIMA
     </Wrapper>
   )
 }
