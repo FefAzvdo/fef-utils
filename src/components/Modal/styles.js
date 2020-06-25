@@ -4,6 +4,8 @@ export const ModalWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 `
 
 export const StyledModalShadowMask = styled.div`
@@ -27,10 +29,10 @@ export const StyledModalInnerContent = styled.div`
   justify-content: space-between;
   flex-direction: column;
 
-  position: absolute;
+  position: fixed;
   top: 15%;
 
-  max-width: 300px;
+  max-width: 800px;
   margin: 0 auto;
 
   background: #fff;
