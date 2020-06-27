@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import {
   Title,
   Text,
@@ -8,16 +7,18 @@ import {
   Row,
   Col,
   Drawer,
-  Modal
+  Modal,
+  Navbar
 } from 'fef-utils'
+
 import 'fef-utils/dist/index.css'
 
-const showHours = () =>
-  alert(
-    `São ${(new Date().getHours() < 10 ? '0' : '') + new Date().getHours()}:${
-      (new Date().getMinutes() < 10 ? '0' : '') + new Date().getMinutes()
-    }`
-  )
+// const showHours = () =>
+//   alert(
+//     `São ${(new Date().getHours() < 10 ? '0' : '') + new Date().getHours()}:${
+//       (new Date().getMinutes() < 10 ? '0' : '') + new Date().getMinutes()
+//     }`
+//   )
 
 const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <Wrapper style={{ background: '#2199ac' }}>
+      <Navbar />
       <Row>
         <Col>
           <Title colorSetup='info'>Computadores Quanticos</Title>
@@ -105,7 +107,6 @@ const App = () => {
           GRID 5
         </Col>
       </Row>
-      AAAAAAAAAAAAAAAA MODAL EM BAIXO
       <Drawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
@@ -154,7 +155,6 @@ const App = () => {
           </Text>
         </Row>
       </Modal>
-      AAAAAAAAAAAAA MODAL EM CIMA
     </Wrapper>
   )
 }

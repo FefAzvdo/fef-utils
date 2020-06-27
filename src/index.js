@@ -6,5 +6,6 @@ import { Row } from './components/Row'
 import { Col } from './components/Col'
 import { Drawer } from './components/Drawer'
 import { Modal } from './components/Modal'
+import { Navbar } from './components/Navbar'
 
-export { Title, Text, Wrapper, Button, Row, Col, Drawer, Modal }
+export { Title, Text, Wrapper, Button, Row, Col, Drawer, Modal, Navbar }
