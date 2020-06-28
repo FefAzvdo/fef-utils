@@ -5,69 +5,54 @@ const titleLogo =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ITunes_12.2_logo.png/600px-ITunes_12.2_logo.png'
 
 const StyledNavbarItem = styled.li`
-  margin: 5px;
-  padding: 10px 0px;
-
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-  background: #00f;
+  .mainWrapper {
+    display: flex;
+  }
 
-  cursor: pointer;
+  .menuItem,
+  .subMenuItem {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    margin: 5px;
+  }
 
-  &:hover > ul.subMenu {
+  .menuItem:hover > ul.subMenu {
     height: auto;
     opacity: 1;
     visibility: visible;
   }
 
-  div {
-    display: flex;
-    flex-direction: row;
+  .menuIcon,
+  .subItemIcon {
+    margin-right: 15px;
   }
 
-  ul.subMenu {
+  .subMenu {
     list-style: none;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-
-    background: #f00;
-    width: fit-content;
-
-    &:hover {
-      height: auto;
-      opacity: 1;
-      visibility: visible;
-    }
-
-    padding-inline-start: 0px;
-
-    transition: opacity 1s;
 
     height: 0;
     opacity: 0;
     visibility: hidden;
 
-    position: fixed;
-    top: 55px;
+    transition: opacity 0.5s;
 
+    position: absolute;
+    top: 42px;
+
+    background: red;
+    padding-inline-start: 0px;
     padding-top: 20px;
+  }
 
-    li {
-      margin: 10px;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-
-      background: #ff0;
-      color: purple;
-      font-weight: bolder;
-    }
+  .subMenu:hover {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
   }
 `
 
@@ -89,90 +74,97 @@ export const Navbar = () => {
       </div>
       <div>
         <ul
-          style={{ listStyle: 'none', display: 'flex', flexDirection: 'row' }}
+          style={{
+            listStyle: 'none',
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap'
+          }}
         >
           <StyledNavbarItem>
-            <div>
-              <div>©</div>
-              <div>Home</div>
-            </div>
-            {/* <ul className='subMenu'>
-              <li>
-                <div>™</div>
-                <div>Home submenu 1</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Home submenu 2</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Home submenu 3</div>
-              </li>
-            </ul> */}
-          </StyledNavbarItem>
-          <StyledNavbarItem>
-            <div>
-              <div>©</div>
-              <div>Quem somos</div>
-            </div>
-            <ul className='subMenu'>
-              <li>
-                <div>™</div>
-                <div>Quem somos submenu 1</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Quem somos submenu 2</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Quem somos submenu 3</div>
-              </li>
-            </ul>
-          </StyledNavbarItem>
-          <StyledNavbarItem>
-            <div>
-              <div>©</div>
-              <div>Fale conosco</div>
-            </div>
-            <ul className='subMenu'>
-              <li>
-                <div>™</div>
-                <div>Fale conosco submenu 1</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Fale conosco submenu 2</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Fale conosco submenu 3</div>
-              </li>
-            </ul>
-          </StyledNavbarItem>
-          <StyledNavbarItem>
-            <div>
-              <div>©</div>
-              <div>Contato</div>
-            </div>
-            <ul className='subMenu'>
-              <li>
-                <div>™</div>
-                <div>Contato submenu 1</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Contato submenu 2</div>
-              </li>
-              <li>
-                <div>™</div>
-                <div>Contato submenu 3</div>
-              </li>
-            </ul>
+            {navbarItems.map((menuItem, index) => (
+              <div
+                key={index}
+                className='mainWrapper'
+                style={{ display: 'flex', flexDirection: 'column' }}
+              >
+                <div className='menuItem'>
+                  <div className='menuIcon'>{menuItem.icon}</div>
+                  <div>{menuItem.menuTitle}</div>
+
+                  {menuItem.submenu !== undefined && (
+                    <ul className='subMenu'>
+                      {menuItem.submenu.map((submenuItem, index) => (
+                        <li key={index} className='subMenuItem'>
+                          <div className='subItemIcon'>{submenuItem.icon}</div>
+                          <div>{submenuItem.submenuTitle}</div>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            ))}
           </StyledNavbarItem>
         </ul>
       </div>
     </div>
   )
 }
+
+const navbarItems = [
+  {
+    icon: '©',
+    menuTitle: 'Sobre a empresa',
+    submenu: [
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Sobre a empresa submenu 1'
+      },
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Sobre a empresa submenu 2'
+      },
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Sobre a empresa submenu 3'
+      }
+    ]
+  },
+  {
+    icon: '©',
+    menuTitle: 'Fale conosco',
+    submenu: [
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Fale conosco submenu 1'
+      },
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Fale conosco submenu 2'
+      },
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Fale conosco submenu 3'
+      }
+    ]
+  },
+  {
+    icon: '©',
+    menuTitle: 'Conheça um pouco sobre nossa história',
+    submenu: [
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Conheça submenu 1'
+      },
+      {
+        icon: 'ℹ',
+        submenuTitle: 'Conheça submenu 2'
+      }
+    ]
+  },
+  {
+    icon: '©',
+    menuTitle: 'HOME'
+  }
+]
