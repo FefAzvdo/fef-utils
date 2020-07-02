@@ -11,6 +11,8 @@ const StyledNavbarItem = styled.li`
 
   .mainWrapper {
     display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   .menuItem,
@@ -21,7 +23,9 @@ const StyledNavbarItem = styled.li`
     margin: 5px;
   }
 
-  .menuItem:hover > ul.subMenu {
+  .menuItemWrapper:hover > ul.subMenu {
+    width: max-content;
+    min-width: 100%;
     height: auto;
     opacity: 1;
     visibility: visible;
@@ -35,6 +39,7 @@ const StyledNavbarItem = styled.li`
   .subMenu {
     list-style: none;
 
+    width: 0;
     height: 0;
     opacity: 0;
     visibility: hidden;
@@ -42,14 +47,27 @@ const StyledNavbarItem = styled.li`
     transition: opacity 0.5s;
 
     position: absolute;
-    top: 42px;
+    top: 23px;
 
-    background: red;
+    background: #44c199;
     padding-inline-start: 0px;
     padding-top: 20px;
   }
 
+  @media (max-width: 560px) {
+    .subMenu {
+      position: static;
+    }
+
+    .menuItem {
+      width: 95%;
+      background: red;
+    }
+  }
+
   .subMenu:hover {
+    width: max-content;
+    min-width: 100%;
     height: auto;
     opacity: 1;
     visibility: visible;
@@ -70,7 +88,11 @@ export const Navbar = () => {
       }}
     >
       <div>
-        <img src={titleLogo} alt='Brand' style={{ maxHeight: 50 }} />
+        <img
+          src={titleLogo}
+          alt='Brand'
+          style={{ maxHeight: 50, marginRight: 15 }}
+        />
       </div>
       <div>
         <ul
@@ -78,22 +100,21 @@ export const Navbar = () => {
             listStyle: 'none',
             display: 'flex',
             flexDirection: 'row',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            paddingInlineStart: 0
           }}
         >
           <StyledNavbarItem>
             {navbarItems.map((menuItem, index) => (
-              <div
-                key={index}
-                className='mainWrapper'
-                style={{ display: 'flex', flexDirection: 'column' }}
-              >
-                <div className='menuItem'>
-                  <div className='menuIcon'>{menuItem.icon}</div>
-                  <div>{menuItem.menuTitle}</div>
+              <div key={index} className='mainWrapper'>
+                <div className='menuItemWrapper'>
+                  <div className='menuItem'>
+                    <div className='menuIcon'>{menuItem.icon}</div>
+                    <div>{menuItem.menuTitle}</div>
+                  </div>
 
                   {menuItem.submenu !== undefined && (
-                    <ul className='subMenu'>
+                    <ul className='subMenu' style={{ margin: '5px' }}>
                       {menuItem.submenu.map((submenuItem, index) => (
                         <li key={index} className='subMenuItem'>
                           <div className='subItemIcon'>{submenuItem.icon}</div>
@@ -119,7 +140,7 @@ const navbarItems = [
     submenu: [
       {
         icon: 'ℹ',
-        submenuTitle: 'Sobre a empresa submenu 1'
+        submenuTitle: 'Sobre a empresa submenu submenu submenu 1'
       },
       {
         icon: 'ℹ',

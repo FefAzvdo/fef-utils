@@ -38,7 +38,7 @@ export const Modal = ({
 
   return (
     <Fragment>
-      <ModalWrapper>
+      <ModalWrapper isOpen={(isOpen = isModalOpen)}>
         <StyledModalShadowMask
           isOpen={(isOpen = isModalOpen)}
           onClick={() => onClose() || setIsModalOpen(false)}

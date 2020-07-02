@@ -107,6 +107,134 @@ const App = () => {
           GRID 5
         </Col>
       </Row>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Text colorSetup='info' shouldCapitalizeFirstLetter>
+        Um computador quântico é um dispositivo que executa cálculos fazendo uso
+        direto de propriedades da mecânica quântica, tais como sobreposição e
+        interferência. Teoricamente, computadores quânticos podem ser
+        implementados e o mais desenvolvido atualmente, o D-Wave Two, trabalha
+        com 512 qubits de informação. O principal ganho desses computadores é a
+        possibilidade de resolver algoritmos num tempo eficiente, alguns
+        problemas que na computação clássica levariam tempo impraticável
+        (exponencial no tamanho da entrada), como por exemplo, a fatoração em
+        primos de números naturais.
+      </Text>
+      <Row justify='flex-start' style={{ marginTop: '200px' }}>
+        <Col justify='space-between' size='30%'>
+          <Button
+            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+            rounded
+          >
+            {isDrawerOpen ? 'FECHAR DRAWER' : 'ABRIR DRAWER'}
+          </Button>
+          <Button
+            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+            onClick={() => setIsModalOpen(!isDrawerOpen)}
+            rounded
+          >
+            {isModalOpen ? 'FECHAR MODAL' : 'ABRIR MODAL'}
+          </Button>
+        </Col>
+      </Row>
       <Drawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
@@ -141,19 +269,10 @@ const App = () => {
         onClose={() => setIsModalOpen(false)}
         title='Descrição'
       >
-        <Row>
-          <Text colorSetup='info' shouldCapitalizeFirstLetter>
-            Um computador quântico é um dispositivo que executa cálculos fazendo
-            uso direto de propriedades da mecânica quântica, tais como
-            sobreposição e interferência. Teoricamente, computadores quânticos
-            podem ser implementados e o mais desenvolvido atualmente, o D-Wave
-            Two, trabalha com 512 qubits de informação. O principal ganho desses
-            computadores é a possibilidade de resolver algoritmos num tempo
-            eficiente, alguns problemas que na computação clássica levariam
-            tempo impraticável (exponencial no tamanho da entrada), como por
-            exemplo, a fatoração em primos de números naturais.
-          </Text>
-        </Row>
+        <Text colorSetup='info' shouldCapitalizeFirstLetter>
+          A redução do tempo de resolução deste problema possibilitaria a quebra
+          da maioria dos sistemas de criptografia usados atualmente.
+        </Text>
       </Modal>
     </Wrapper>
   )
