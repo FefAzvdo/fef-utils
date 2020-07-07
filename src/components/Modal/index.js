@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   ModalWrapper,
   StyledModalInnerContent,
@@ -37,39 +37,37 @@ export const Modal = ({
   }, [isOpen, isModalOpen])
 
   return (
-    <Fragment>
-      <ModalWrapper isOpen={(isOpen = isModalOpen)}>
-        <StyledModalShadowMask
-          isOpen={(isOpen = isModalOpen)}
-          onClick={() => onClose() || setIsModalOpen(false)}
-        />
-        <StyledModalInnerContent isOpen={(isOpen = isModalOpen)}>
-          <StyledModalHeader isOpen={(isOpen = isModalOpen)}>
-            <div style={{ marginLeft: '10px' }}>{title}</div>
-          </StyledModalHeader>
-          <StyledModalBody isOpen={(isOpen = isModalOpen)}>
-            {children}
-          </StyledModalBody>
-          <StyledModalFooter isOpen={(isOpen = isModalOpen)}>
-            <Button
-              onClick={() => onOk()}
-              rounded
-              icon='✅'
-              colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
-            >
-              {onOkBtnText}
-            </Button>
-            <Button
-              onClick={() => onClose() || setIsModalOpen(false)}
-              rounded
-              icon='❌'
-              colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
-            >
-              {closeBtnText}
-            </Button>
-          </StyledModalFooter>
-        </StyledModalInnerContent>
-      </ModalWrapper>
-    </Fragment>
+    <ModalWrapper isOpen={(isOpen = isModalOpen)}>
+      <StyledModalShadowMask
+        isOpen={(isOpen = isModalOpen)}
+        onClick={() => onClose() || setIsModalOpen(false)}
+      />
+      <StyledModalInnerContent isOpen={(isOpen = isModalOpen)}>
+        <StyledModalHeader isOpen={(isOpen = isModalOpen)}>
+          <div style={{ marginLeft: '10px' }}>{title}</div>
+        </StyledModalHeader>
+        <StyledModalBody isOpen={(isOpen = isModalOpen)}>
+          {children}
+        </StyledModalBody>
+        <StyledModalFooter isOpen={(isOpen = isModalOpen)}>
+          <Button
+            onClick={() => onOk()}
+            rounded
+            icon='✅'
+            colorSetup={{ firstColor: '#5cb85c', secondColor: 'white' }}
+          >
+            {onOkBtnText}
+          </Button>
+          <Button
+            onClick={() => onClose() || setIsModalOpen(false)}
+            rounded
+            icon='❌'
+            colorSetup={{ firstColor: '#fe7773', secondColor: 'white' }}
+          >
+            {closeBtnText}
+          </Button>
+        </StyledModalFooter>
+      </StyledModalInnerContent>
+    </ModalWrapper>
   )
 }

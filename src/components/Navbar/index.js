@@ -4,6 +4,34 @@ import styled from 'styled-components'
 const titleLogo =
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ITunes_12.2_logo.png/600px-ITunes_12.2_logo.png'
 
+const StyledNavbarWraper = styled.div`
+  width: 100%;
+  background: #44c199;
+  min-height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  .styled_ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+  }
+
+  @media (max-width: 780px) {
+    .brand {
+      display: none;
+    }
+
+    .styled_ul {
+      width: 100%;
+    }
+  }
+`
+
 const StyledNavbarItem = styled.li`
   display: flex;
   flex-direction: row;
@@ -20,20 +48,21 @@ const StyledNavbarItem = styled.li`
     display: flex;
     flex-direction: row;
     cursor: pointer;
-    margin: 5px;
+    padding: 5px;
   }
 
   .menuItemWrapper:hover > ul.subMenu {
     width: max-content;
     min-width: 100%;
     height: auto;
+    width: auto;
     opacity: 1;
     visibility: visible;
   }
 
   .menuIcon,
   .subItemIcon {
-    margin-right: 15px;
+    padding-right: 15px;
   }
 
   .subMenu {
@@ -51,18 +80,28 @@ const StyledNavbarItem = styled.li`
 
     background: #44c199;
     padding-inline-start: 0px;
-    padding-top: 20px;
+    padding-top: 24px;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 780px) {
     .subMenu {
       position: static;
+      flex-direction: column;
+      padding-top: 10px;
     }
 
-    .menuItem {
-      width: 95%;
-      background: red;
+    .subMenuItem {
+      border-bottom: 1px solid black;
+      padding: 8px;
+      margin: 0px;
     }
+
+    .subMenuItem:first-child {
+      border-top: 1px solid black;
+    }
+
+    display: list-item;
+    width: 100%;
   }
 
   .subMenu:hover {
@@ -71,39 +110,27 @@ const StyledNavbarItem = styled.li`
     height: auto;
     opacity: 1;
     visibility: visible;
+    width: auto;
+  }
+
+  .subMenuItem:hover {
+    transition: background-color 1s;
+    background-color: #44c100a1;
   }
 `
 
 export const Navbar = () => {
   return (
-    <div
-      style={{
-        width: '100%',
-        background: '#44c199',
-        minHeight: '30px',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start'
-      }}
-    >
-      <div>
+    <StyledNavbarWraper>
+      <div className='brand'>
         <img
           src={titleLogo}
           alt='Brand'
           style={{ maxHeight: 50, marginRight: 15 }}
         />
       </div>
-      <div>
-        <ul
-          style={{
-            listStyle: 'none',
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            paddingInlineStart: 0
-          }}
-        >
+      <div style={{ width: '100%' }}>
+        <ul className='styled_ul'>
           <StyledNavbarItem>
             {navbarItems.map((menuItem, index) => (
               <div key={index} className='mainWrapper'>
@@ -114,7 +141,7 @@ export const Navbar = () => {
                   </div>
 
                   {menuItem.submenu !== undefined && (
-                    <ul className='subMenu' style={{ margin: '5px' }}>
+                    <ul className='subMenu'>
                       {menuItem.submenu.map((submenuItem, index) => (
                         <li key={index} className='subMenuItem'>
                           <div className='subItemIcon'>{submenuItem.icon}</div>
@@ -129,11 +156,15 @@ export const Navbar = () => {
           </StyledNavbarItem>
         </ul>
       </div>
-    </div>
+    </StyledNavbarWraper>
   )
 }
 
 const navbarItems = [
+  {
+    icon: '©',
+    menuTitle: 'HOME'
+  },
   {
     icon: '©',
     menuTitle: 'Sobre a empresa',
@@ -183,9 +214,5 @@ const navbarItems = [
         submenuTitle: 'Conheça submenu 2'
       }
     ]
-  },
-  {
-    icon: '©',
-    menuTitle: 'HOME'
   }
 ]
